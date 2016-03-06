@@ -34,6 +34,10 @@ class AddressBook
     @entries.delete(delete_entry)
   end
 
+  def nuke
+    @entries = []
+  end
+
 
   def import_from_csv(file_name)
     csv_text = File.read(file_name)

@@ -63,6 +63,19 @@ RSpec.describe AddressBook do
       expect(entry.email).to eq expected_email
   end
 
+  describe "#nuke" do
+
+    it "deletes all entries"do
+    book.add_entry("Michael Faraday", "010.210.5181", "michael.faraday@faraday.com")
+    book.add_entry("Michael Faraday", "010.210.5181", "michael.faraday@faraday.com")
+    book.add_entry("Michael Faraday", "010.210.5181", "michael.faraday@faraday.com")
+
+    book.nuke
+    expect(book.entries.size).to eq 0
+    end
+
+  end
+
 
   describe "#import_from_csv" do
 
